@@ -103,6 +103,6 @@ $('#quantity').donetyping(function() {
     changeItemsType(itemsType);
     sendItemsQuantity();
   } else {
-    alert('Input should be number!')
+    alert('Input should be a number!')
   }
 });
