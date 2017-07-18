@@ -4,7 +4,8 @@ var bodyParser = require('body-parser');
 
 var
   totalItems,
-  itemsType;
+  itemsType,
+  itemsListing;
 
 function gaussRound(num, decimalPlaces) {
   var d = decimalPlaces || 0,
@@ -24,6 +25,7 @@ router.post('/itemsQuantity', function(req, res){
   res.send(req.body);
   totalItems = req.body.itemsQuantity;
   itemsType = req.body.itemsType;
+  itemsListing = req.body.itemsList;
 });
 
 
@@ -69,6 +71,7 @@ router.get('/', function(req, res, next) {
     totalItems: totalItems,
     pageCount: pageCount,
     currentPage: currentPage,
+    itemsList: itemsListing,
     title: 'Test Task'
   });
 });

@@ -66,6 +66,21 @@
         </ul>
         <% } %>
       </div>
+      <div class="items-counter">
+        <% if ( typeof itemsList !== 'undefined' && (totalItems - 1) > 0 ) { %>
+          <div>Items listing: </div>
+          <span><%= itemsList %></span>
+          <div>Items count:</div>
+          <span><%= totalItems - 1 %></span>
+          <div>Pages: </div>
+          <span><%= pageCount %></span>
+        <% } else { %>
+          <div>Pages: </div>
+          <span>1</span>
+          <div>Items count:</div>
+          <span>0</span>
+        <% } %>
+      </div>
     </div>
     <footer class="footer">
       <script src="/jquery/jquery.min.js"></script>

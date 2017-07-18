@@ -6,6 +6,7 @@
  **/
 var itemsQuantity = 0;
 var itemsType;
+var itemsList = [];
 
 /**
  * ------------------------------------------------------------------------------------------------------
@@ -54,13 +55,14 @@ function changeItemsType(type) {
           $(this).append('<div class="item item-a">Item ' + itemsType + [i + 1] + '</div>');
         });
       }
+      itemsList.push(itemsType + [i + 1])
     }
   }
 };
 
 function sendItemsQuantity() {
 
-  var data = { itemsQuantity: ++itemsQuantity, itemsType: itemsType };
+  var data = { itemsQuantity: ++itemsQuantity, itemsType: itemsType, itemsList: itemsList };
 
   $.ajax({
     type: 'POST',

@@ -83,4 +83,11 @@ body {
     align-items: center;
     justify-content: center; }
 
+.items-counter {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  max-width: 200px;
+  word-wrap: break-word; }
+
 /*# sourceMappingURL=style.css.map */
