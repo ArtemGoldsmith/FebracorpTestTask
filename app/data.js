@@ -1,7 +1,3 @@
-/**
- * Created by root on 18.07.17.
- */
-
 'use strict';
 
 var totalItems,
