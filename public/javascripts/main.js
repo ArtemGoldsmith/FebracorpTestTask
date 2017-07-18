@@ -44,6 +44,10 @@ $.fn.extend({
  * ------------------------------------------------------------------------------------------------------
  **/
 
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 function changeItemsType(type) {
   itemsType = type;
   $('#quantity').removeAttr('disabled').css('border', '1px solid #ff0000');
@@ -69,9 +73,8 @@ function sendItemsQuantity() {
     data: JSON.stringify(data),
     contentType: 'application/json',
     cache: false,
-    url: 'http://localhost:3000/itemsQuantity',
+    url: '/itemsQuantity',
     success: function(data) {
-      console.log(JSON.stringify(data));
       location.reload(true);
     }
   });
@@ -94,8 +97,12 @@ $('.options-button').on('click', function() {
   $('.dropdown-block').toggleClass('visible');
 });
 
-$('#quantity').donetyping(function(){
-  itemsQuantity = $(this).val();
-  changeItemsType(itemsType);
-  sendItemsQuantity();
+$('#quantity').donetyping(function() {
+  if ( isNumeric($(this).val()) ) {
+    itemsQuantity = $(this).val();
+    changeItemsType(itemsType);
+    sendItemsQuantity();
+  } else {
+    alert('Input should be number!')
+  }
 });

@@ -21,7 +21,6 @@ function gaussRound(num, decimalPlaces) {
 router.use(bodyParser.json());
 router.post('/itemsQuantity', function(req, res){
   var obj = {};
-  console.log('body: ' + JSON.stringify(req.body));
   res.send(req.body);
   totalItems = req.body.itemsQuantity;
   itemsType = req.body.itemsType;
