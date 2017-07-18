@@ -31,11 +31,11 @@
     </div>
     <div class="main-block">
       <div class="item-wrapper">
-          <!--<% items.forEach( function( item ) { %>-->
-        <!--<div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>-->
-          <!--<% }) %>-->
+        <% items.forEach( function( item ) { %>
+        <div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>
+        <% }) %>
       </div>
-      <div class="pagination-wrapper">
+      <!-- <div class="pagination-wrapper">
           <% if ( pageCount > 1 ) { %>
         <ul class="pagination">
             <% if ( currentPage > 1 ) { %>
@@ -63,7 +63,7 @@
             <% } %>
         </ul>
           <% } %>
-      </div>
+      </div>-->
     </div>
     <footer class="footer">
       <script src="/jquery/jquery.min.js"></script>

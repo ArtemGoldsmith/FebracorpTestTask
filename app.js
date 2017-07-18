@@ -51,4 +51,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.post('/items_quantity', function(req, res) {
+  console.log(req.body.itemsQuantity);
+  console.log(req.body.itemsType);
+  res.contentType('json');
+  res.send({ some: JSON.stringify({ response:'json' }) });
+});
+
 module.exports = app;

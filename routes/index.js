@@ -1,5 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+
+var
+  totalItems = 5,
+  itemsType = 'A';
 
 function gaussRound(num, decimalPlaces) {
   var d = decimalPlaces || 0,
@@ -11,12 +16,21 @@ function gaussRound(num, decimalPlaces) {
       ((i % 2 === 0) ? i : i + 1) : Math.round(n);
   return d ? r / m : r;
 }
+// Get Items Options
+router.use(bodyParser.json());
+router.post('/endpoint', function(req, res){
+  var obj = {};
+  console.log('body: ' + JSON.stringify(req.body));
+  res.send(req.body);
+  totalItems = req.body.itemsQuantity;
+  itemsType = req.body.itemsType;
+});
 
-/* GET home page. */
+
+// Get Home page
 router.get('/', function(req, res, next) {
-
   //set default variables
-  var totalItems = 3,
+  var
     pageSize = 3,
     currentPage = 1,
     items = [],
@@ -33,7 +47,7 @@ router.get('/', function(req, res, next) {
   for (var i = 1; i < totalItems; i++) {
     items.push({
       name: 'Item',
-      type: 'A',
+      type: itemsType,
       number: i
     });
   }

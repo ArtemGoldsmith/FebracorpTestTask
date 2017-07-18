@@ -11,7 +11,7 @@ function changeItemsType(type) {
   $('.main-block .item-wrapper').html('');
   console.log(itemsType);
   if ( itemsQuantity > 0 ) {
-    for ( i = 0; i < itemsQuantity; i++ ) {
+    for ( i = 0; i < 3; i++ ) {
       $('.main-block .item-wrapper').each(function() {
         $(this).append('<div class="item item-a">Item ' + itemsType + [i+1] + '</div>');
       });
@@ -22,7 +22,24 @@ function changeItemsType(type) {
 $('#quantity').on('input', function() {
   itemsQuantity = $(this).val();
   changeItemsType(itemsType);
+  sendItemsQuantity();
 });
+
+function sendItemsQuantity() {
+
+  var data = { itemsQuantity: itemsQuantity, itemsType: itemsType };
+
+  $.ajax({
+    type: 'POST',
+    data: JSON.stringify(data),
+    contentType: 'application/json',
+    url: 'http://localhost:3000/endpoint',
+    success: function(data) {
+      console.log('success');
+      console.log(JSON.stringify(data));
+    }
+  });
+}
 
 $(document).mouseup(function(e) {
   var el = $('.dropdown-block');
