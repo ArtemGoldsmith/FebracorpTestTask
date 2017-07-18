@@ -47,14 +47,14 @@ body {
     transform: translateX(-100%);
     opacity: 0;
     transition: transform .4s ease, opacity .4s ease;
-    width: inherit; }
+    width: 150px; }
     .sidebar-block .dropdown-block.visible {
       opacity: 1;
-      transform: translateX(100%); }
+      transform: translateX(200%); }
     .sidebar-block .dropdown-block .btn-group {
       margin: 58px auto;
       display: block;
-      width: 40%;
+      width: 75%;
       text-align: center;
       height: 35px; }
 
