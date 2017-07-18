@@ -27,16 +27,17 @@ $('#quantity').on('input', function() {
 
 function sendItemsQuantity() {
 
-  var data = { itemsQuantity: itemsQuantity, itemsType: itemsType };
+  var data = { itemsQuantity: ++itemsQuantity, itemsType: itemsType };
 
   $.ajax({
     type: 'POST',
     data: JSON.stringify(data),
     contentType: 'application/json',
-    url: 'http://localhost:3000/endpoint',
+    cache: false,
+    url: 'http://localhost:3000/itemsQuantity',
     success: function(data) {
-      console.log('success');
       console.log(JSON.stringify(data));
+      location.reload(true);
     }
   });
 }

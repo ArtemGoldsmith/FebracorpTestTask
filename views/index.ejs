@@ -35,8 +35,8 @@
         <div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>
         <% }) %>
       </div>
-      <!-- <div class="pagination-wrapper">
-          <% if ( pageCount > 1 ) { %>
+      <% if ( pageCount > 1 ) { %>
+      <div class="pagination-wrapper">
         <ul class="pagination">
             <% if ( currentPage > 1 ) { %>
           <li><a href="/?page=1">&laquo;</a></li>
@@ -62,8 +62,8 @@
           <li><a href="/?page=<%= pageCount %>">&raquo;</a></li>
             <% } %>
         </ul>
-          <% } %>
-      </div>-->
+        <% } %>
+      </div>
     </div>
     <footer class="footer">
       <script src="/jquery/jquery.min.js"></script>

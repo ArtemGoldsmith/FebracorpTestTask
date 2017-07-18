@@ -18,7 +18,7 @@ function gaussRound(num, decimalPlaces) {
 }
 // Get Items Options
 router.use(bodyParser.json());
-router.post('/endpoint', function(req, res){
+router.post('/itemsQuantity', function(req, res){
   var obj = {};
   console.log('body: ' + JSON.stringify(req.body));
   res.send(req.body);
