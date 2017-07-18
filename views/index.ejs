@@ -31,9 +31,11 @@
     </div>
     <div class="main-block">
       <div class="item-wrapper">
-        <% items.forEach( function( item ) { %>
-        <div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>
-        <% }) %>
+        <% if ( typeof items !== 'undefined' ) { %>
+          <% items.forEach( function( item ) { %>
+          <div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>
+          <% }) %>
+        <% } %>
       </div>
       <% if ( pageCount > 1 ) { %>
       <div class="pagination-wrapper">

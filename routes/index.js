@@ -3,8 +3,8 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 var
-  totalItems = 5,
-  itemsType = 'A';
+  totalItems,
+  itemsType;
 
 function gaussRound(num, decimalPlaces) {
   var d = decimalPlaces || 0,
