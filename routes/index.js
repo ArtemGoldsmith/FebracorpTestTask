@@ -16,19 +16,19 @@ function gaussRound(num, decimalPlaces) {
 router.get('/', function(req, res, next) {
 
   //set default variables
-  var totalItems = 9,
+  var totalItems = 3,
     pageSize = 3,
     currentPage = 1,
     items = [],
     itemsArrays = [],
     itemsList = [];
-
-  if ( (totalItems / pageSize) % 2 ) {
+  if ( totalItems === 0 ) {
+    pageCount = 1;
+  } else if ( (totalItems / pageSize) % 2 ) {
     pageCount = gaussRound(totalItems / pageSize);
   } else {
     pageCount = totalItems / pageSize;
   }
-  console.log(pageCount);
 
   for (var i = 1; i < totalItems; i++) {
     items.push({

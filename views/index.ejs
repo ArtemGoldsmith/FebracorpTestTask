@@ -10,7 +10,7 @@
       <button class="options-button btn btn-primary">Option</button>
       <div class="quantity-block">
         <label for="quantity">Quantity</label>
-        <input id="quantity" type="text" name="items-quantity" placeholder="Type here" class="quantity-field">
+        <input id="quantity" disabled type="text" name="items-quantity" placeholder="Type here" class="quantity-field">
       </div>
       <div class="dropdown-block">
         <div class="btn-group">
@@ -20,10 +20,10 @@
           </button>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="javascript:void(0)" onclick="items.type='A'">A items</a>
+              <a href="javascript:void(0)" onclick="changeItemsType('A')">A items</a>
             </li>
             <li>
-              <a href="javascript:void(0)" onclick="items.type='B'">B items</a>
+              <a href="javascript:void(0)" onclick="changeItemsType('B')">B items</a>
             </li>
           </ul>
         </div>
@@ -31,9 +31,9 @@
     </div>
     <div class="main-block">
       <div class="item-wrapper">
-          <% items.forEach( function( item ) { %>
-        <div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>
-          <% }) %>
+          <!--<% items.forEach( function( item ) { %>-->
+        <!--<div class="item item-a"><%= item.name %> <%= item.type %><%= item.number %></div>-->
+          <!--<% }) %>-->
       </div>
       <div class="pagination-wrapper">
           <% if ( pageCount > 1 ) { %>
